@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "AutoQARobot", "AutoQARobot\AutoQARobot.pyproj", "{FADE00DA-1535-4993-8F05-E5F085B84C6C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FADE00DA-1535-4993-8F05-E5F085B84C6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FADE00DA-1535-4993-8F05-E5F085B84C6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D563D837-4AFC-433C-9C7E-21416EF44FD8}
+	EndGlobalSection
+EndGlobal
