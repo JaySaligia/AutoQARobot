@@ -4,7 +4,7 @@ import tensorflow as tf
 import jieba
 import re
 from gensim.models import word2vec
-
+#将数据根据分词后转换为词向量存储为np格式
 training_data = []
 training_labels = []
 testing_data = []

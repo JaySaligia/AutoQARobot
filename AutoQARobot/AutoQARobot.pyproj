@@ -22,6 +22,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AutoQARobot.py" />
+    <Compile Include="cnn_train.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="pretreat2np.py">
       <SubType>Code</SubType>
     </Compile>
