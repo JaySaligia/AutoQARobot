@@ -31,15 +31,20 @@
     <Compile Include="pretreat2txt.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="QAjson.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="word2vec.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Answers.txt" />
     <Content Include="qanda.txt" />
     <Content Include="qanda_after.txt" />
     <Content Include="stopwords.txt" />
     <Content Include="traindata.txt" />
+    <Content Include="traindata_new.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

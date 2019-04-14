@@ -2,7 +2,7 @@ import tensorflow as tf
 import numpy as np
 
 embedding_dim = 24
-seq_length = 12
+seq_length = 8
 num_classes = 55
 num_filters = 256
 kernel_size = 5 
@@ -10,7 +10,7 @@ hidden_dim = 128
 dropout_keep_prob = 0.5
 learning_rate = 1e-3
 batch_size = 32
-max_steps = 1000
+max_steps = 10000
 def main():
     #加载预处理数据
     processed_data = np.load(r"C:\Users\77329\source\repos\AutoQARobot\AutoQARobot\processed_data.npy")
@@ -23,7 +23,7 @@ def main():
     testing_labels = processed_data[5]
     print("%d training examples. %d validation examples and %d testing examples." %(n_training_example, len(validation_labels), len(testing_labels)))
     #定义输入
-    data = tf.placeholder(tf.float32, [None. seq_length, embedding_dim], name = 'input_data')
+    data = tf.placeholder(tf.float32, [None, seq_length, embedding_dim], name = 'input_data')
     labels = tf.placeholder(tf.int64, [None], name = 'labels')
     with tf.name_scope('cnn_layer'):
         conv = tf.layers.conv1d(data, num_filters, kernel_size, name = 'conv')

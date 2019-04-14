@@ -11,8 +11,11 @@ testing_data = []
 testing_labels = []
 validation_data = []
 validation_labels = []
+wordvec_dim = 24
+seq_len = 8
+
 model = word2vec.Word2Vec.load(r"C:\Users\77329\source\repos\AutoQARobot\AutoQARobot\qanda.model")
-with open(r'C:\Users\77329\source\repos\AutoQARobot\AutoQARobot\traindata.txt') as f:
+with open(r'C:\Users\77329\source\repos\AutoQARobot\AutoQARobot\traindata_new.txt') as f:
     lines = f.readlines()
     print(lines)
     count = 0
@@ -21,25 +24,34 @@ with open(r'C:\Users\77329\source\repos\AutoQARobot\AutoQARobot\traindata.txt') 
             print("正在处理第" + str(count) + "个问题")
             count += 1
             label = int(line.split('.')[0]) - 1
-            filterstr = '[a-zA-Z0-9’!"#$%&\'()*+,-./:;<=>?@，。?★、\\n…【】《》？“”（）‘’：——！[\\]^_`{|}~]+' 
+            filterstr = '[a-zA-Z0-9’!"#$%&\'()*+,-./:;<=>?@，。?★、…【】《》？“”（）‘’：——！[\\]^_`{|}~的什么我有怎吗是自己\n]+' 
             line = re.sub(filterstr,'', line)
             cut = jieba.cut(line)
             linelist = ' '.join(cut).split(' ')                
-            datamritix = np.zeros((12, 24), dtype=float)
-            high = min(len(linelist), 12)
-            for i in range(high):
-                row = model[linelist[i]]
+            datamritix = np.zeros((seq_len, wordvec_dim), dtype=float)
+            #high = min(len(linelist), seq_len)
+            #for i in range(high):
+            #    if linelist[i] in model:
+            #        row = model[linelist[i]]
+            #    else:
+            #       row = np.zeros(wordvec_dim, dtype=float)
+            #   datamritix[i] = row
+            for i in range(seq_len):
+                k = np.random.randint(len(linelist))
+                if linelist[k] in model:
+                    row = model[linelist[k]]
+                else:
+                    row = np.zeros(wordvec_dim, dtype=float)
                 datamritix[i] = row
-            for i in range(7):
-                training_data.append(datamritix)
-                training_labels.append(label)
-                chance = np.random.randint(100)
-                if chance < 10:
-                    testing_data.append(datamritix)
-                    testing_labels.append(label)
-                elif chance < 20:
-                    validation_data.append(datamritix)
-                    validation_labels.append(label)
+            training_data.append(datamritix)
+            training_labels.append(label)
+            chance = np.random.randint(100)
+            if chance < 10:
+                 testing_data.append(datamritix)
+                 testing_labels.append(label)
+            elif chance < 20:
+                 validation_data.append(datamritix)
+                 validation_labels.append(label)
     state = np.random.get_state()
     np.random.shuffle(training_data)
     np.random.set_state(state)

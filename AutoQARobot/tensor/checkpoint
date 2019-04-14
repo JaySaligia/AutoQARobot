@@ -1,0 +1,6 @@
+model_checkpoint_path: "C:\\Users\\77329\\source\\repos\\AutoQARobot\\AutoQARobot\\checkpoint\\textcnn.cpkt-999"
+all_model_checkpoint_paths: "C:\\Users\\77329\\source\\repos\\AutoQARobot\\AutoQARobot\\checkpoint\\textcnn.cpkt-900"
+all_model_checkpoint_paths: "C:\\Users\\77329\\source\\repos\\AutoQARobot\\AutoQARobot\\checkpoint\\textcnn.cpkt-930"
+all_model_checkpoint_paths: "C:\\Users\\77329\\source\\repos\\AutoQARobot\\AutoQARobot\\checkpoint\\textcnn.cpkt-960"
+all_model_checkpoint_paths: "C:\\Users\\77329\\source\\repos\\AutoQARobot\\AutoQARobot\\checkpoint\\textcnn.cpkt-990"
+all_model_checkpoint_paths: "C:\\Users\\77329\\source\\repos\\AutoQARobot\\AutoQARobot\\checkpoint\\textcnn.cpkt-999"
