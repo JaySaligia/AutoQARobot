@@ -24,8 +24,11 @@ with open(r'C:\Users\77329\source\repos\AutoQARobot\AutoQARobot\traindata_new.tx
             print("正在处理第" + str(count) + "个问题")
             count += 1
             label = int(line.split('.')[0]) - 1
-            filterstr = '[a-zA-Z0-9’!"#$%&\'()*+,-./:;<=>?@，。?★、…【】《》？“”（）‘’：——！[\\]^_`{|}~的什么我有怎吗是自己\n]+' 
+            filterstr = '[a-zA-Z0-9’!"#$%&\'()*+,-./:;<=>?@，。?★、…【】《》？“”（）‘’：——！[\\]^_`{|}~的什么我有怎吗是自己了该\n]+' 
             line = re.sub(filterstr,'', line)
+            line = re.sub('武汉大学', '武大', line)
+            line = re.sub('武大', '学校', line)
+            jieba.load_userdict(r'C:\Users\77329\source\repos\AutoQARobot\AutoQARobot\dict.txt')
             cut = jieba.cut(line)
             linelist = ' '.join(cut).split(' ')                
             datamritix = np.zeros((seq_len, wordvec_dim), dtype=float)

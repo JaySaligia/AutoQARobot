@@ -10,7 +10,7 @@ hidden_dim = 128
 dropout_keep_prob = 0.5
 learning_rate = 1e-3
 batch_size = 32
-max_steps = 10000
+max_steps = 100000
 def main():
     #加载预处理数据
     processed_data = np.load(r"C:\Users\77329\source\repos\AutoQARobot\AutoQARobot\processed_data.npy")
